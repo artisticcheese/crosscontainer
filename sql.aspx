@@ -4,7 +4,7 @@
 <script runat="server">
   protected void Page_Load(object sender, EventArgs e)
   {
-      using (SqlConnection cn = new SqlConnection("data source=192.168.1.33;Integrated Security=True"))
+      using (SqlConnection cn = new SqlConnection("data source=sql.ad.local;Integrated Security=True"))
       {
           SqlCommand cmd = new SqlCommand();
           cmd.CommandText = "SELECT ORIGINAL_LOGIN()";
