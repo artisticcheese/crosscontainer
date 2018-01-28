@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+
+  iis:
+    image: microsoft/iis
+    ports:
+      - "80:80"
+    networks:
+      - nat
+    credential_spec:
+      file: win.json
+  sql:
+    image: microsoft/mssql-server-windows-developer
+    environment: 
+      - sa_password=123456
+      - ACCEPT_EULA=Y
+    networks:
+      - nat
+    credential_spec:
+      file: win.json
+
+networks: 
+  nat:
+    external: true
+
+
+
+  
