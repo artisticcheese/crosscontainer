@@ -7,8 +7,8 @@ services:
       - "80:80"
     networks:
       - nat
-    credential_spec:
-      file: win.json
+    security_opt:
+      - credentialspec=file://win.json
   sql:
     image: microsoft/mssql-server-windows-developer
     environment: 
@@ -16,8 +16,9 @@ services:
       - ACCEPT_EULA=Y
     networks:
       - nat
-    credential_spec:
-      file: win.json
+    security_opt:
+      - credentialspec=file://win.json
+
 
 networks: 
   nat:
